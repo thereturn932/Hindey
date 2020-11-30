@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
+  m_Name: TriggeredEvent 3
+  m_EditorClassIdentifier: 
+  eventName: Money Trigger
+  eventDescription: You are short on money. Your people gave you their hard earned
+    money.
+  selection1Description: Thank them. (+1000 Money)
+  effect1: e803000000000000000000000000000000000000000000000000000000000000
+  selection2Description: Request more. (+1500 Money, -5 Happiness)
+  effect2: dc05000000000000000000000000000000000000fbffffff0000000000000000
+  type: 2
+  chainID: 0
+  chainOrder: 0
+  eventGap: 
+  triggerReason: 1

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
+  m_Name: TriggeredEvent
+  m_EditorClassIdentifier: 
+  eventName: Low Food Trigger
+  eventDescription: You are low on food. Your people will starve.
+  selection1Description: Buy food from Country A ( -1000 Money, +100 Food, +10 Country
+    A, -10 Country B)
+  effect1: 18fcffff64000000000000000000000000000000000000000a000000f6ffffff
+  selection2Description: Buy food from Country B ( -1000 Money, +100 Food, +10 Country
+    B, -10 Country A)
+  effect2: 18fcffff6400000000000000000000000000000000000000f6ffffff0a000000
+  type: 2
+  chainID: 0
+  chainOrder: 0
+  eventGap: 
+  triggerReason: 0

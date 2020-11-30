@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
+  m_Name: Day1
+  m_EditorClassIdentifier: 
+  eventName: Day 1
+  eventDescription: 'It''s the first day of great war between Country A and Country
+    B. You are given responsibility of govern a very small country for 30 days.
+
+    You
+    have zero chance against both of the countries. Hence, you should avoid war.
+    Keep people happy, have enough food, have enough soldier to avoid occupation.
+
+
+    Starting
+    gifts are offered by both of the countries. You should select one.
+
+
+    p.s.
+    relation increase with a country means relation decrease with the other one.'
+  selection1Description: Accept Country A (+1000 Money, +10 Country A, -10 Country
+    B)
+  effect1: e803000000000000000000000000000000000000000000000a000000f6ffffff
+  selection2Description: Accept Country B (+1000 Money, +10 Country B, -10 Country
+    A)
+  effect2: 000000006400000000000000000000000000000000000000f6ffffff0a000000
+  type: 0
+  chainID: 0
+  chainOrder: 0
+  eventGap: 
+  triggerReason: 0
