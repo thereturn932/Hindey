@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
-  m_Name: TriggeredEvent 3
+  m_Name: Pandemi
   m_EditorClassIdentifier: 
-  eventName: Money Trigger
-  eventDescription: You are short on money. Your people gave you their hard earned
-    money.
-  selection1Description: Thank them. (+1000 Money, +5 Happiness)
-  effect1: e803000000000000000000000000000000000000050000000000000000000000
-  selection2Description: Request more. (+1500 Money, -5 Happiness)
-  effect2: dc05000000000000000000000000000000000000fbffffff0000000000000000
-  type: 2
+  eventName: Pandemic
+  eventDescription: A Pandemic started among your people.
+  selection1Description: Take Precautions (-750 Money, -50k Population)
+  effect1: 12fdffff000000000000000000000000ceffffff000000000000000000000000
+  selection2Description: Do nothing (-150k Population, -15 Happiness)
+  effect2: 000000000000000000000000000000006afffffff1ffffff0000000000000000
+  type: 0
   chainID: 0
   chainOrder: 0
   eventGap: 
-  triggerReason: 1
+  triggerReason: 0
   soundEffect: {fileID: 8300000, guid: 9bc3db48523ef4c49bbea7cd1d1a31fd, type: 3}

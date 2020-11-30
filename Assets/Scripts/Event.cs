@@ -16,7 +16,8 @@ public class Event : ScriptableObject
         LowFood,
         LowMoney,
         ArmyRevolution,
-        LowArmyPower
+        LowArmyPower,
+        HighHappiness
     }
     public string eventName;
     [TextArea(15, 20)]
@@ -30,4 +31,5 @@ public class Event : ScriptableObject
     public int chainOrder;
     public int[] eventGap;
     public TriggerReasons triggerReason;
+    public AudioClip soundEffect;
 }

@@ -24,3 +24,4 @@ MonoBehaviour:
   chainOrder: 0
   eventGap: 
   triggerReason: 2
+  soundEffect: {fileID: 8300000, guid: 9bc3db48523ef4c49bbea7cd1d1a31fd, type: 3}

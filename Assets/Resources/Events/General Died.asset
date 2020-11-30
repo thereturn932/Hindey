@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
-  m_Name: Event2
+  m_Name: General Died
   m_EditorClassIdentifier: 
-  eventName: Celebration
-  eventDescription: There is a huge celebration.
-  selection1Description: Attend (-1000 Money, +10 Happiness)
-  effect1: 18fcffff000000000000000000000000000000000a0000000000000000000000
-  selection2Description: Do not attend (+5 Happiness)
-  effect2: 0000000000000000000000000000000000000000050000000000000000000000
+  eventName: General Died
+  eventDescription: One of your generals died
+  selection1Description: Oh No! (-10 Army Power)
+  effect1: 000000000000000000000000f6ffffff00000000000000000000000000000000
+  selection2Description: 
+  effect2: 0000000000000000000000000000000000000000000000000000000000000000
   type: 0
   chainID: 0
   chainOrder: 0
   eventGap: 
   triggerReason: 0
-  soundEffect: {fileID: 8300000, guid: 3be97636636198e4bad7d379e6eebbea, type: 3}
+  soundEffect: {fileID: 8300000, guid: ae058a3e88c484345ae86fcb44d8350f, type: 3}

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
-  m_Name: Event3
+  m_Name: Invest A
   m_EditorClassIdentifier: 
-  eventName: Normal Event 3
-  eventDescription: You found out some government officials are bribed.
-  selection1Description: Denounce Them (-250 Money, -10 Happiness)
-  effect1: ceffffff00000000000000000000000000000000f6ffffff0000000000000000
-  selection2Description: Hide it from people (-1000 Money)
-  effect2: 18fcffff00000000000000000000000000000000000000000000000000000000
+  eventName: Invest A
+  eventDescription: Country A offers some investment.
+  selection1Description: Accept (+1000 Money, +5 Happiness, +5 Country A, -5 Country
+    B)
+  effect1: e8030000000000000000000000000000000000000500000005000000fbffffff
+  selection2Description: Decline (+5 Country B, -5 Happiness, -5 Country A)
+  effect2: 0000000000000000000000000000000000000000fbfffffffbffffff05000000
   type: 0
   chainID: 0
   chainOrder: 0

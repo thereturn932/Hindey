@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [Space(10)]
     [Header("Game Variables")]
     public int gameLength = 30;
-    public int[] defeatCounter = new int[4] { 0, 0, 0, 0 };
+    public int[] defeatCounter = new int[5] { 0, 0, 0, 0, 0 };
 
     [SerializeField]
     public Country myCountry;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     //indexes: 0 food 1 money 2 revolution 3 low army
     [SerializeField]
-    private bool[] isReasonTriggered = new bool[4] { false, false, false, false };
+    private bool[] isReasonTriggered = new bool[5] { false, false, false, false, false };
 
 
     [Space(10)]
@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     public List<Event> lowFoodTriggered = new List<Event>();
     public List<Event> lowArmyTriggered = new List<Event>();
     public List<Event> highArmyTriggered = new List<Event>();
+    public List<Event> highHappinessTriggered = new List<Event>();
     private Event currentEvent;
 
     public Text eventText;
@@ -112,6 +113,9 @@ public class GameManager : MonoBehaviour
     [Header("Modifiers")]
     //ModifierManagement
     public int[] buildingModifier = new int[8];
+
+    //Sound Management
+    public GameObject soundManager;
 
 
     #region Start-Update Functions
@@ -153,6 +157,9 @@ public class GameManager : MonoBehaviour
                         break;
                     case Event.TriggerReasons.LowArmyPower:
                         lowArmyTriggered.Add(e);
+                        break;
+                    case Event.TriggerReasons.HighHappiness:
+                        highHappinessTriggered.Add(e);
                         break;
                     default:
                         break;
@@ -569,19 +576,15 @@ public class GameManager : MonoBehaviour
                     case 0:
                         LoseGame("Your food was not enough. Your people overthrow you.");
                         return;
-                        break;
                     case 1:
                         LoseGame("Your money was not enough. Your people overthrow you.");
                         return;
-                        break;
                     case 2:
                         LoseGame("Your army was too weak. You got attacked.");
                         return;
-                        break;
                     case 3:
                         LoseGame("Your army was too strong. They made a revolution.");
                         return;
-                        break;
                     default:
                         break;
                 }
@@ -688,6 +691,10 @@ public class GameManager : MonoBehaviour
             }
             return;
         }
+        if (myCountry.happiness > 90)
+        {
+            EventTrigger(Event.TriggerReasons.HighHappiness);
+        }
     }
 
 
@@ -715,6 +722,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         currentEvent = myCountry.events[day - 1];
         eventText.text = currentEvent.eventDescription;
+        soundManager.GetComponent<AudioSource>().clip = currentEvent.soundEffect;
+        soundManager.GetComponent<AudioSource>().Play();
         if (currentEvent.selection2Description != "")
         {
             selection2Button.SetActive(true);
@@ -864,6 +873,14 @@ public class GameManager : MonoBehaviour
                     index++;
                 }
                 myCountry.events[myCountry.day + index] = lowFoodTriggered[Random.Range(0, lowArmyTriggered.Count)];
+                break;
+            case Event.TriggerReasons.HighHappiness:
+                while (myCountry.events[myCountry.day + index].type == Event.EventType.Chain)
+                {
+                    print("Chain Event. Indexer increased to" + index.ToString());
+                    index++;
+                }
+                myCountry.events[myCountry.day + index] = highHappinessTriggered[Random.Range(0, lowArmyTriggered.Count)];
                 break;
             default:
                 break;

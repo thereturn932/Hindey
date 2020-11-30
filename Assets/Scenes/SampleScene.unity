@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1196,20 +1196,32 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 64
+    m_MaxSize: 74
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Game Design & Development:\nBurak \xD6zen (TheReturn)\n\nMain Menu Wallpaper:\nBusiness
-    vector created by upklyak - www.freepik.com\n\nSave System:\nAdvanced Save System
-    (\xA9 2020 Hendrik Haidenthaler)\n\nClean Vector Icons by PONETI"
+  m_Text: "Game Design & Development:\nBurak \xD6zen (TheReturn)\n\nBackground Image
+    - Designed by upklyak / Freepik www.freepik.com\r\nClean Vector Icons - by PONETI
+    https://assetstore.unity.com/packages/2d/gui/icons/clean-vector-icons-132084\r\nAdvanced
+    Save System - by Hendrik Haidenthaler Hendrik Haidenthaler https://assetstore.unity.com/packages/tools/utilities/advanced-save-system-165088\r\nSoldiers
+    Marching- by Mike Koenig http://soundbible.com/1329-Soldiers-Marching.html Attribution
+    3.0\r\nFireworks And Crowd Sound - by Mike Koenig http://soundbible.com/712-Fireworks-And-Crowd.html
+    Attribution 3.0\r\n40 Smith Wesson Sound - by Mike Koenig http://soundbible.com/2122-40-Smith-Wesson.html
+    Attribution 3.0\r\nCivil War Drummer - by DrumM8 http://soundbible.com/1512-Civil-War-Drummer-.html
+    Attribution 3.0\r\nChurch Bell Chime - by Daniel Simion http://soundbible.com/2171-Church-Bell-Chime.html
+    Attribution 3.0\r\nTo_Be_Booed - by freesound https://freesound.org/people/freesound/sounds/25270/
+    CC0 1.0 Universal (CC0 1.0)\r\nLarge_crowd - by eguobyte https://freesound.org/people/eguobyte/sounds/360703/
+    CC0 1.0 Universal (CC0 1.0)\r\nspinning_money - by florian_reinke https://freesound.org/people/florian_reinke/sounds/63523/
+    CC0 1.0 Universal (CC0 1.0)\r\nFootsteps_Boots_Interior - by Nox_Sound https://freesound.org/people/Nox_Sound/sounds/530588/
+    CC0 1.0 Universal (CC0 1.0)\r\nProtest - by MrProfDrDickweed https://freesound.org/people/MrProfDrDickweed/sounds/271203/
+    Attribution 3.0 Unported (CC BY 3.0)"
 --- !u!222 &145003103
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9146,11 +9158,13 @@ MonoBehaviour:
   lowFoodTriggered: []
   lowArmyTriggered: []
   highArmyTriggered: []
+  highHappinessTriggered: []
   eventText: {fileID: 1318385620}
   selection1Text: {fileID: 664348425}
   selection2Text: {fileID: 1817580685}
   selection2Button: {fileID: 1900845295}
   buildingModifier: 0000000000000000000000000000000000000000000000000000000000000000
+  soundManager: {fileID: 1565488916}
 --- !u!1 &1390324177
 GameObject:
   m_ObjectHideFlags: 0
@@ -9837,6 +9851,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549207227}
   m_CullTransparentMesh: 0
+--- !u!1 &1565488916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565488918}
+  - component: {fileID: 1565488917}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1565488917
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565488916}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1565488918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565488916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 926.2892, y: 571.2787, z: -301.43997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602251788
 GameObject:
   m_ObjectHideFlags: 0

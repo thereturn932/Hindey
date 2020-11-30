@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
   m_Name: New Event 1
   m_EditorClassIdentifier: 
-  eventName: 
-  eventDescription: 
-  selection1Description: 
-  effect1: 0000000000000000000000000000000000000000000000000000000000000000
-  selection2Description: 
-  effect2: 0000000000000000000000000000000000000000000000000000000000000000
+  eventName: Rlly
+  eventDescription: A march started in support of Country B in its war.
+  selection1Description: Stop Them (+5 Sides, +5 Country A, -5 Country B)
+  effect1: 00000000000000000500000000000000000000000000000005000000fbffffff
+  selection2Description: Stop Them (+5 Country B, -5 Sides, -5 Country A)
+  effect2: 0000000000000000fbffffff0000000000000000000000000000000000000000
   type: 0
   chainID: 0
   chainOrder: 0
   eventGap: 
   triggerReason: 0
+  soundEffect: {fileID: 8300000, guid: 3be97636636198e4bad7d379e6eebbea, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41a5b27f329fcb47a0c49bcd7dfb9cb, type: 3}
-  m_Name: TriggeredEvent 1
+  m_Name: Low Army Power
   m_EditorClassIdentifier: 
   eventName: Low Army Power
   eventDescription: Your army power is too low. You have to request some help from
@@ -26,3 +26,4 @@ MonoBehaviour:
   chainOrder: 0
   eventGap: 
   triggerReason: 3
+  soundEffect: {fileID: 8300000, guid: 50e54ced127e64a4895d18e609957468, type: 3}
