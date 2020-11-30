@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     /*
      * Buildings
      */
+    private GameObject[] buildings;
     public Text farmCount;
     public Text baracksCount;
     public Text embassyACount;
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
     public Text eventText;
     public Text selection1Text;
     public Text selection2Text;
+    public GameObject selection2Button;
 
 
 
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buildings = GameObject.FindGameObjectsWithTag("BuildingCounter");
         warningText.text = "";
         defaultTimeScale = Time.timeScale;
         mainMenu.enabled = true;
@@ -198,6 +201,10 @@ public class GameManager : MonoBehaviour
 
     public void OnCreateCountryButtonPressed()
     {
+        foreach (var bld in buildings)
+        {
+            bld.GetComponent<Text>().text = 0.ToString();
+        }
         if (countryNameInput.text == "")
         {
             myCountry = new Country("Inday", gameLength);
@@ -452,7 +459,9 @@ public class GameManager : MonoBehaviour
     {
         BuildingModifierCalculation();
         myCountry.money += (int)(myCountry.population * myCountry.tax *0.25 - buildingModifier[0] + myCountry.decisionModifiers[0]);
-        myCountry.food += (int)(-1* myCountry.population * 0.5 + buildingModifier[1] + myCountry.decisionModifiers[1]);
+        myCountry.food += (int)((-1* myCountry.population * 0.1) + buildingModifier[1] + myCountry.decisionModifiers[1]);
+        print((-1 * myCountry.population * 0.5));
+        print("/n/n/n" + buildingModifier[1].ToString());
         myCountry.sides += myCountry.decisionModifiers[2] + buildingModifier[2] + (int)(myCountry.relationWithCountryA * .1) - (int)(myCountry.relationWithCountryB * .1);
         myCountry.armyPower += myCountry.decisionModifiers[3] + buildingModifier[3] - (int)(myCountry.armyPower*.1);
         myCountry.population += myCountry.decisionModifiers[4] + buildingModifier[4] + (int)(myCountry.population * .1);
@@ -518,30 +527,37 @@ public class GameManager : MonoBehaviour
         if (myCountry.money >= 10 * myCountry.population)
         {
             LoseGame("Because of your wealth you became a target and attacked.");
+            return;
         }
         if (myCountry.food >= 15 * myCountry.population)
         {
             LoseGame("Because of your wealth in food you became a target and attacked.");
+            return;
         }
         if (myCountry.sides>75)
         {
             LoseGame("Your people wanted to join war against Country B.");
+            return;
         }
         if (myCountry.sides < 25)
         {
             LoseGame("Your people wanted to join war against Country A.");
+            return;
         }
         if (myCountry.happiness < 15)
         {
             LoseGame("Your people was sad. They overthrow you.");
+            return;
         }
         if (myCountry.relationWithCountryA > 80)
         {
             LoseGame("You were too good with Country A. You got attacked by Country B");
+            return;
         }
         if (myCountry.relationWithCountryB > 80)
         {
             LoseGame("You were too good with Country B. You got attacked by Country A");
+            return;
         }
         int i = 0;
         foreach (var item in defeatCounter)
@@ -552,15 +568,19 @@ public class GameManager : MonoBehaviour
                 {
                     case 0:
                         LoseGame("Your food was not enough. Your people overthrow you.");
+                        return;
                         break;
                     case 1:
                         LoseGame("Your money was not enough. Your people overthrow you.");
+                        return;
                         break;
                     case 2:
                         LoseGame("Your army was too weak. You got attacked.");
+                        return;
                         break;
                     case 3:
                         LoseGame("Your army was too strong. They made a revolution.");
+                        return;
                         break;
                     default:
                         break;
@@ -695,9 +715,20 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         currentEvent = myCountry.events[day - 1];
         eventText.text = currentEvent.eventDescription;
-        selection1Text.text = "   " + currentEvent.selection1Description + "   ";
-        selection2Text.text = "   " + currentEvent.selection2Description + "   ";
-        eventScreen.enabled = true;
+        if (currentEvent.selection2Description != "")
+        {
+            selection2Button.SetActive(true);
+            selection1Text.text = "   " + currentEvent.selection1Description + "   ";
+            selection2Text.text = "   " + currentEvent.selection2Description + "   ";
+            eventScreen.enabled = true; 
+        }
+        else
+        {
+            selection2Button.SetActive(false);
+            selection1Text.text = "   " + currentEvent.selection1Description + "   ";
+            selection2Text.text = "   " + currentEvent.selection2Description + "   ";
+            eventScreen.enabled = true;
+        }
     }
 
     private void EventCreator()

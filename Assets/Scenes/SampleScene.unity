@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 33996548}
   m_Layer: 5
   m_Name: Embassy B Count
-  m_TagString: Untagged
+  m_TagString: BuildingCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 382912014}
   m_Layer: 5
   m_Name: Farm Count
-  m_TagString: Untagged
+  m_TagString: BuildingCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4660,7 +4660,7 @@ GameObject:
   - component: {fileID: 565565128}
   m_Layer: 5
   m_Name: Tavern Count
-  m_TagString: Untagged
+  m_TagString: BuildingCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5895,7 +5895,7 @@ GameObject:
   - component: {fileID: 798645522}
   m_Layer: 5
   m_Name: Embassy A Count
-  m_TagString: Untagged
+  m_TagString: BuildingCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9149,6 +9149,7 @@ MonoBehaviour:
   eventText: {fileID: 1318385620}
   selection1Text: {fileID: 664348425}
   selection2Text: {fileID: 1817580685}
+  selection2Button: {fileID: 1900845295}
   buildingModifier: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1390324177
 GameObject:
@@ -9469,7 +9470,7 @@ GameObject:
   - component: {fileID: 1529228663}
   m_Layer: 5
   m_Name: Barracks Count
-  m_TagString: Untagged
+  m_TagString: BuildingCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
